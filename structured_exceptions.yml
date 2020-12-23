@@ -1,0 +1,72 @@
+---
+:filename: main.rb
+:line_number: '2'
+:cause: "/"
+:message: divided by 0
+:type: ZeroDivisionError
+:scope: main
+:time: 2020-12-18 18:45:05.058816000 -07:00
+---
+:filename: main.rb
+:line_number: '2'
+:cause: "/"
+:message: divided by 0
+:type: ZeroDivisionError
+:scope: main
+:time: 2020-12-18 18:45:25.030454000 -07:00
+---
+:filename: main.rb
+:line_number: '2'
+:cause: "/"
+:message: divided by 0
+:type: ZeroDivisionError
+:scope: main
+:time: 2020-12-19 02:19:00.479493000 -07:00
+---
+:filename: main.rb
+:line_number: '2'
+:cause: "/"
+:message: divided by 0
+:type: ZeroDivisionError
+:scope: main
+:time: 2020-12-19 02:19:17.552920000 -07:00
+---
+:filename: main.rb
+:line_number: '2'
+:cause: "/"
+:message: divided by 0
+:type: ZeroDivisionError
+:scope: main
+:time: 2020-12-19 02:20:55.415177000 -07:00
+---
+:filename: main.rb
+:line_number: '2'
+:cause: "/"
+:message: divided by 0
+:type: ZeroDivisionError
+:scope: main
+:time: 2020-12-19 02:22:14.430391000 -07:00
+---
+:filename: main.rb
+:line_number: '2'
+:cause: "/"
+:message: divided by 0
+:type: ZeroDivisionError
+:scope: main
+:time: 2020-12-19 14:43:12.501811000 -07:00
+---
+:filename: main.rb
+:line_number: '3'
+:cause: "<main>"
+:message: undefined local variable or method `hi' for main:Object
+:type: NameError
+:scope: main
+:time: 2020-12-19 14:43:48.778642000 -07:00
+---
+:filename: main.rb
+:line_number: '4'
+:cause: "<main>"
+:message: undefined method `write' for "hi":String
+:type: NoMethodError
+:scope: main
+:time: 2020-12-19 14:44:46.126465000 -07:00
