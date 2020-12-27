@@ -1,4 +1,5 @@
-require 'yaml' 
+
+require 'yaml'
 
 exception = ''
 
