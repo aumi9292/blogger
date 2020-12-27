@@ -2,7 +2,6 @@ require 'yaml'
 
 exception = ''
 
-
 File.readlines(ARGV[0]).each do |line|
   exception << line
 end 
@@ -59,5 +58,5 @@ end
 structured = build_exception_hash(exception)
 
 File.open('structured_exceptions.yml', 'a+') do |file|
-  file.write(structured.to_yaml)
+  file.write (structured.to_yaml)
 end 
