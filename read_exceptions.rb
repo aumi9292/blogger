@@ -23,8 +23,11 @@ def get_count_of_each_exception_class(exceptions)
   counts
 end 
 
-def display_counts(counts)
+def display_total_and_counts(total, counts)
   system('clear')
+  
+  puts "Total Exceptions: #{total}"
+
   counts.each do |type, count|
     puts  "\n"
     puts "Exception Class: #{type}"
@@ -34,5 +37,6 @@ def display_counts(counts)
 end
 
 exceptions = read_all_exceptions
+total = get_total_project_exceptions(exceptions)
 counts = get_count_of_each_exception_class(exceptions)
-display_counts(counts)
+display_total_and_counts(total, counts)
