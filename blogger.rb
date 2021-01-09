@@ -1,20 +1,26 @@
-# Elements for execution
-execution_lang = 'ruby '
-file = ARGV[0]        
-logging_method = ' 2>'
-log_file = 'error_log.rb'  
-parser = 'exception_parser.rb '
+require 'yaml'
 
-silent_logging = execution_lang + file + logging_method + log_file
+at_exit do 
+  if $! 
+    blogger = create_instance($!)
+    logging(blogger)
+  end
+end
 
-parse_and_save_to_yaml = execution_lang + parser + log_file
+def create_instance(exception)
+  blogger_entry = {}
+  blogger_entry[:filename] = $0
+  blogger_entry[:line_number] = $!.backtrace[0].split(':')[1]
+  blogger_entry[:cause] = $!.backtrace[0].split('`')[-1]
+  blogger_entry[:message] = $!.message
+  blogger_entry[:type] = $!.class.to_s
+  blogger_entry[:scope] = self.to_s
+  blogger_entry[:time] = Time.now
+  blogger_entry
+end
 
-# Execute file with Bash
-`#{execution_lang} #{file}` 
-
-# Silent logging via Ruby
-system(silent_logging)
-
-#executing the exception_parse file, passing the log_file in as an argument 
-
-system(parse_and_save_to_yaml)
+def logging(structured)
+  File.open('structured_exceptions.yml', 'a+') do |file|
+    file.write (structured.to_yaml)
+  end 
+end

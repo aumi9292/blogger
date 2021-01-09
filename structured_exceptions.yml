@@ -94,3 +94,19 @@
 :type: NoMethodError
 :scope: main
 :time: 2021-01-09 01:07:58.381868000 -07:00
+---
+:filename: main.rb
+:line_number: '5'
+:cause: "<main>'"
+:message: undefined method `write' for "hi":String
+:type: NilClass
+:scope: main
+:time: 2021-01-09 15:05:10.720996000 -07:00
+---
+:filename: main.rb
+:line_number: '5'
+:cause: "<main>'"
+:message: undefined method `write' for "hi":String
+:type: NilClass
+:scope: main
+:time: 2021-01-09 15:07:49.751502000 -07:00
