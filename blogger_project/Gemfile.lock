@@ -1,0 +1,24 @@
+PATH
+  remote: .
+  specs:
+    ruby_blogger (1.0.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rake (13.0.3)
+    yaml (0.1.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rake
+  ruby_blogger!
+  yaml (~> 0.1.0)
+
+RUBY VERSION
+   ruby 2.7.0p0
+
+BUNDLED WITH
+   2.1.4

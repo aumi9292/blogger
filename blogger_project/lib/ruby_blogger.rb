@@ -1,3 +1,4 @@
+require 'bundler/setup'
 require 'yaml'
 
 at_exit do 

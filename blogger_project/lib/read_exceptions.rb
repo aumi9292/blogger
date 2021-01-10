@@ -1,3 +1,4 @@
+require 'bundler/setup'
 require 'yaml'
 #opens the .yml file, which is an IO object, passes it to YAML.load_streams. In the block, yaml_doc represents each exception in the .yml file
 def read_all_exceptions
