@@ -7,4 +7,5 @@ Gem::Specification.new do |s|
   s.email       = 'austin.miller@colorado.edu'
   s.homepage    = 'https://github.com/aumi9292/blogger'
   s.files       = ['./lib/ruby_blogger.rb', './lib/read_exceptions.rb']
+  s.executables << 'blog'
 end
