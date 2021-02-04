@@ -1,2 +1,3 @@
-#!/bin/bash
-ruby ./../lib/read_exceptions.rb $1
+#!/usr/bin/env ruby
+
+require 'read_exceptions'
