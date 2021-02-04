@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ruby_blogger (1.0.4)
+    ruby_blogger (1.0.5)
 
 GEM
   remote: https://rubygems.org/
