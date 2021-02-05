@@ -18,6 +18,7 @@ def create_instance(exception)
   blogger_entry[:scope] = self.to_s
   blogger_entry[:time] = Time.now
   blogger_entry
+  puts 'Entry logged successfully'
 end
 
 def logging(structured)
