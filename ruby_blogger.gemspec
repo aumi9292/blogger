@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Leena Lallmon', 'Austin Miller', 'Mandy Cheang']
   s.email       = 'austin.miller@colorado.edu', 'leena.lallmon@gmail.com'
   s.homepage    = 'https://github.com/aumi9292/blogger'
-  s.license 	= 'MIT'
+  s.license 	  = 'MIT'
   s.files       = Dir['lib/**/*.rb']
   s.executables << 'blog'
 end
