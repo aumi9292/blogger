@@ -68,6 +68,7 @@ def display_each_exception(filename)
 exceptions = read_exceptions_for_file(filename)
   lines = exceptions.map do |exc|
     format_exception_line(exc[:type], 
+                          exc[:description],
                           exc[:line_number],
                           exc[:time])
   end 
@@ -75,10 +76,14 @@ exceptions = read_exceptions_for_file(filename)
 end 
 
 #provide simple formatting for each exception class and line number
-def format_exception_line(type, line, time)
+def format_exception_line(type, description, line, time)
   date, time, tz = separate_date_and_time(time)
-  l_hash = { class: type, Line: line, Time: time, Date: date }
-  l_hash.map { |pair| pair.join(': ') }.join('   ')
+  line_hash = { class: type,
+                description: description,
+                Line: line,
+                Time: time,
+                Date: date }
+  line_hash.map { |pair| pair.join(': ') }.join("\n   ")
 end 
 
 #separates date, time, and tz
@@ -112,4 +117,4 @@ elsif specified_file && !File.exist?(specified_file)
   display_file_does_not_exist(specified_file)
 else 
   display_summary
-end 
+end
