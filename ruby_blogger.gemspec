@@ -8,5 +8,5 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/aumi9292/blogger'
   s.license 	  = 'MIT'
   s.files       = Dir['lib/**/*.rb']
-  s.executables << 'blog'
+  s.executables = ['blog']
 end
