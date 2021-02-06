@@ -28,7 +28,6 @@ def create_instance(exception)
   blogger_entry[:description] = get_error_description($!.class.to_s.to_sym)
   blogger_entry[:scope] = self.to_s
   blogger_entry[:time] = Time.now
-  puts 'Entry logged successfully'
   blogger_entry
 end
 
@@ -36,4 +35,5 @@ def logging(structured)
   File.open('structured_exceptions.yml', 'a+') do |file|
     file.write (structured.to_yaml)
   end 
+  puts 'Bug Logged Successfully:'
 end
