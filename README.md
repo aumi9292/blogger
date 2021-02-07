@@ -12,9 +12,9 @@ Ruby Blogger was created with beginners in mind. STDERR output can be an intimid
 
 ### Dependencies
 
-ruby 2.7.0 or higher
+`ruby 2.7.0` or higher
 
-When you install ruby_blogger, an appropriate version of yaml and rake RubyGems will be downloaded and installed.
+When you install `ruby_blogger`, an appropriate version of `yaml` and `rake` RubyGems will be downloaded and installed.
 
 ### Installation
 
