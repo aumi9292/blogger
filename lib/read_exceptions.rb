@@ -13,10 +13,8 @@ end
 
 #The following grouping of methods parse and display exception data for the whole project folder
 
-def get_total_project_exceptions_and_filenames(exceptions)
-  count = exceptions.length
-  filenames = get_all_filenames(exceptions)
-  "#{count} in #{filenames}"
+def get_total_project_exceptions(exceptions)
+  exceptions.length
 end
 
 def get_count_of_each_exception_class(exceptions)
@@ -26,11 +24,6 @@ def get_count_of_each_exception_class(exceptions)
     counts[type] ? counts[type] += 1 : counts[type] = 1
   end 
   counts
-end
-
-#captures all filenames that require ruby_blogger that have raised exceptions
-def get_all_filenames(exceptions)
-  exceptions.map { |exc| exc[:filename]}.uniq.join(', ')
 end 
 
 #display count of total exceptions and each exception class and its count
@@ -41,14 +34,14 @@ def display_total_and_counts(total, counts)
     puts  "\n"
     puts "Exception Class: #{type}"
     puts "Total: #{count}"
-    puts "-" * 15
+    puts "-" * 80
   end
 end
 
 #combines all get methods to display all exceptions and counts raised by all files in the project folder
 def display_summary
   exceptions = read_all_exceptions
-  total = get_total_project_exceptions_and_filenames(exceptions)
+  total = get_total_project_exceptions(exceptions)
   counts = get_count_of_each_exception_class(exceptions)
   display_total_and_counts(total, counts)
 end 
@@ -102,12 +95,12 @@ end
 def display_header_info(filename)
   puts "\n"
   puts "File: #{filename}"
-  puts '-' * 15
+  puts '-' * 80
 end 
 
 #display simple trailer in CL
 def display_trailer
-  puts '-' * 15
+  puts '-' * 80
 end
 
 #displays error message if user specifies non-existent file
@@ -115,16 +108,10 @@ def display_file_does_not_exist(file)
   puts "Sorry, #{file} is not a file in this folder."
 end 
 
-def display_no_exceptions 
-  puts "No exceptions have been raised by files that require 'ruby_blogger'"
-end 
-
 #functional logic to capture command line input and either display information for the file specified in the command line or display data for the entire folder if no file is specified.
 specified_file = ARGV[0]
 
-if !File.exist?('structured_exceptions.yml') 
-  display_no_exceptions
-elsif specified_file && File.exist?(specified_file)
+if specified_file && File.exist?(specified_file)
   display_exceptions_for_file(specified_file) 
 elsif specified_file && !File.exist?(specified_file)
   display_file_does_not_exist(specified_file)
