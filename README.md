@@ -66,11 +66,11 @@ Help us improve the data that `blog` returns!
 
 If this gem helped you, show your support by🌟it!
 
-### Authors Contact Information
+### Authors
 
-[Austin Miller](https://github.com/aumi9292)
-[Leena Lallmon](https://github.com/leena)
-[Mandy Cheang](https://github.com/mandysGit)
+- [Austin Miller](https://github.com/aumi9292)
+- [Leena Lallmon](https://github.com/leena)
+- [Mandy Cheang](https://github.com/mandysGit)
 
 ### License
 
