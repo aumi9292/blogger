@@ -1,13 +1,14 @@
 class BloggerException
   def initialize
-    @filename = $0
-    @line_number = $!.backtrace[0].split(':')[1]
+    @file = $0
+    @line = $!.backtrace[0].split(':')[1]
     @cause = $!.backtrace[0].split('`')[-1]
     @message = $!.message
     @type = $!.class.to_s
     @description = generate_description(self.type.to_sym)
     @scope = $!.backtrace[0].split(/\./)[0]
-    @time = Time.now
+    @time = Time.now.strftime("%I:%M:%S %p")
+    @date = Time.now.strftime("%m/%d/%y")
   end
 
   DESCRIPTIONS = {
@@ -17,14 +18,24 @@ class BloggerException
 
   def to_s
     <<~MLS 
-    :filename: #{filename}
-    :line_number: #{line_number}
+    :file: #{filename}
+    :line: #{line}
     :cause: #{cause}
     :message: #{message}
     :type: #{type}
     :description #{description}
     :scope: #{scope}
     :time: #{time}
+    MLS
+  end
+
+  def display
+    puts <<~MLS
+    \tClass #{self.type}
+    \tDescription: #{self.description}
+    \tLine: #{self.line}
+    \tTime: #{self.time}
+    \tDate: #{self.date}
     MLS
   end
 
@@ -40,8 +51,8 @@ class BloggerException
     return 'Check out https://ruby-doc.org/core-2.7.0/Exception.html for more information.'
   end
 
-  attr_reader :filename, :line_number, :type, 
-              :description, :time
+  attr_reader :file, :line, :type, 
+              :description, :time, :date
 private
   attr_reader :cause,
               :message, 
