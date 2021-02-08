@@ -1,13 +1,25 @@
 require 'bundler/setup'
 require 'yaml'
+require_relative 'BloggerException.rb'
 #opens the .yml file, which is an IO object, passes it to YAML.load_streams. In the block, yaml_doc represents each exception in the .yml file
+
+class BloggerExceptionList
+  def initialize(exceptions)
+    @exceptions = exceptions
+  end
+
+  attr_accessor :exceptions
+
+end
+
 def read_all_exceptions
   exceptions = []
   File.open('structured_exceptions.yml') do |yaml_file|
-    YAML.load_stream(yaml_file) do |yaml_doc|
-      exceptions << yaml_doc 
+    YAML.load_stream(yaml_file) do |bloggerException|
+      exceptions << bloggerException
     end
   end 
+  BloggerExceptionList.new(exceptions)
   exceptions
 end 
 
@@ -22,7 +34,7 @@ end
 def get_count_of_each_exception_class(exceptions)
   counts = {}
   exceptions.each do |exception|
-    type = exception[:type]
+    type = exception.type
     counts[type] ? counts[type] += 1 : counts[type] = 1
   end 
   counts
@@ -30,7 +42,8 @@ end
 
 #captures all filenames that require ruby_blogger that have raised exceptions
 def get_all_filenames(exceptions)
-  exceptions.map { |exc| exc[:filename]}.uniq.join(', ')
+  puts exceptions
+  exceptions.map { |exc| exc.filename}.uniq.join(', ')
 end 
 
 #display count of total exceptions and each exception class and its count
@@ -59,7 +72,7 @@ end
 def read_exceptions_for_file(filename)
   exceptions = read_all_exceptions
   exceptions.select do |exc|
-    exc[:filename] == filename
+    exc.filename == filename
   end 
 end 
 
@@ -74,10 +87,10 @@ end
 def display_each_exception(filename)
 exceptions = read_exceptions_for_file(filename)
   lines = exceptions.map do |exc|
-    format_exception_line(exc[:type], 
-                          exc[:description],
-                          exc[:line_number],
-                          exc[:time])
+    format_exception_line(exc.type, 
+                          exc.description,
+                          exc.line_number,
+                          exc.time)
   end 
   puts lines
 end 
