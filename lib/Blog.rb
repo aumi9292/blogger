@@ -11,7 +11,7 @@ class Blog
   FILE = 'structured_exceptions.yml'
   NO_EXCEPTIONS = "No exceptions have been raised by files that require 'ruby_blogger'"
 
-  def initialize(specified_file = null)
+  def initialize(specified_file = nil)
     @exceptions = YAML.load_stream(File.read(FILE))
     @unique_files = exceptions.map { |exc| exc.file }.uniq
     @count_and_files = "#{exceptions.length} in #{unique_files.join(' ')}"

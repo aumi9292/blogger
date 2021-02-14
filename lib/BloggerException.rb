@@ -18,7 +18,7 @@ class BloggerException
 
   def to_s
     <<~MLS 
-    :file: #{filename}
+    :file: #{file}
     :line: #{line}
     :cause: #{cause}
     :message: #{message}
