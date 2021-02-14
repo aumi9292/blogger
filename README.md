@@ -23,6 +23,9 @@ At your command line, enter:
 ```
 gem install ruby_blogger
 ```
+You will see something like this:
+
+![](ruby_blogger_installation.gif)
 
 ### Usage
 
