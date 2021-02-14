@@ -23,9 +23,10 @@ At your command line, enter:
 ```
 gem install ruby_blogger
 ```
+
 You will see something like this:
 
-![](ruby_blogger_installation.gif)
+![](./readme_materials/ruby_blogger_installation.gif)
 
 ### Usage
 
@@ -37,6 +38,9 @@ The `ruby_blogger` gem can be used to track exceptions raised by one, several, o
 require 'ruby_blogger'
 ```
 
+For example:
+![](./readme_materials/erroneous_main.png)
+
 And work as you would normally. Each time an exception is raised, you'll get a confirmation that the logging was successful:
 
 ```
@@ -45,17 +49,26 @@ And work as you would normally. Each time an exception is raised, you'll get a c
 
 Followed by the usual `STDERR` output.
 
+Following the exmple with `main.rb`:
+![](./readme_materials/cl_output.png)
+
 #### To review exceptions logged for **all** of your project files that require ruby_blogger, at your terminal, enter:
 
 ```
 blog
 ```
 
+Following the exmple with `main.rb`:
+![](./readme_materials/ruby_blogger_all_files_output.png)
+
 #### To review exceptions logged for **one** file that you specify, at your terminal, enter:
 
 ```
 blog filename.rb
 ```
+
+Following the exmple with `main.rb`:
+![](./readme_materials/ruby_blogger_specified_file_output.png)
 
 ### Contributing
 
