@@ -39,6 +39,7 @@ require 'ruby_blogger'
 ```
 
 For example, we have a file named `main.rb`:
+
 ![](./readme_materials/erroneous_main.png)
 
 And work as you would normally. Each time an exception is raised, you'll get a confirmation that the logging was successful:
@@ -50,6 +51,7 @@ And work as you would normally. Each time an exception is raised, you'll get a c
 Followed by the usual `STDERR` output.
 
 Following the exmple with `main.rb`:
+
 ![](./readme_materials/cl_output.gif)
 
 #### To review exceptions logged for all of your project files that require ruby_blogger, at your terminal, enter:
@@ -59,6 +61,7 @@ blog
 ```
 
 Following the exmple with `main.rb`:
+
 ![](./readme_materials/ruby_blogger_all_files_output.gif)
 
 #### To review exceptions logged for one file that you specify, at your terminal, enter:
@@ -68,6 +71,7 @@ blog filename.rb
 ```
 
 Following the exmple with `main.rb`:
+
 ![](./readme_materials/ruby_blogger_specified_file_output.gif)
 
 ### Contributing
