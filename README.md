@@ -32,13 +32,13 @@ You will see something like this:
 
 The `ruby_blogger` gem can be used to track exceptions raised by one, several, or all project files. To make sure `ruby_blogger` will track exceptions for a given file, it must be required at the top of that file.
 
-#### To automatically track a file, add this on line 1:
+#### To automatically track a file, add this one line at the top:
 
 ```ruby
 require 'ruby_blogger'
 ```
 
-For example:
+For example, we have a file named `main.rb`:
 ![](./readme_materials/erroneous_main.png)
 
 And work as you would normally. Each time an exception is raised, you'll get a confirmation that the logging was successful:
@@ -50,44 +50,41 @@ And work as you would normally. Each time an exception is raised, you'll get a c
 Followed by the usual `STDERR` output.
 
 Following the exmple with `main.rb`:
-![](./readme_materials/cl_output.png)
+![](./readme_materials/cl_output.gif)
 
-#### To review exceptions logged for **all** of your project files that require ruby_blogger, at your terminal, enter:
+#### To review exceptions logged for all of your project files that require ruby_blogger, at your terminal, enter:
 
 ```
 blog
 ```
 
 Following the exmple with `main.rb`:
-![](./readme_materials/ruby_blogger_all_files_output.png)
+![](./readme_materials/ruby_blogger_all_files_output.gif)
 
-#### To review exceptions logged for **one** file that you specify, at your terminal, enter:
+#### To review exceptions logged for one file that you specify, at your terminal, enter:
 
 ```
 blog filename.rb
 ```
 
 Following the exmple with `main.rb`:
-![](./readme_materials/ruby_blogger_specified_file_output.png)
+![](./readme_materials/ruby_blogger_specified_file_output.gif)
 
 ### Contributing
+Please open an [issue](https://github.com/aumi9292/blogger/issues) first, so we can discuss features and ensure pull requests will be fruitful. This project is open source and your [pull requests](https://github.com/aumi9292/blogger/pulls) are welcome. 
 
-Improvements and features are welcome as [pull requests](https://github.com/aumi9292/blogger/pulls).
+You will be listed as a contributor here (name and github profile).
 
-Please open an [issue](https://github.com/aumi9292/blogger/issues) if needed before submitting a pull request.
-
-Help us improve the data that `blog` returns!
+#### First Pull Request?
+Help us improve the [Exceptions Descriptions!](https://github.com/aumi9292/blogger/issues/17)
 
 ### Show your support
-
-If this gem helped you, show your support by🌟it!
+If this gem helped you, show your support by 🌟 it!
 
 ### Authors
-
 - [Austin Miller](https://github.com/aumi9292)
 - [Leena Lallmon](https://github.com/leena)
 - [Mandy Cheang](https://github.com/mandysGit)
 
 ### License
-
 Copyright (c) 2021 [MIT license](https://github.com/aumi9292/blogger/blob/master/LICENSE.txt)
